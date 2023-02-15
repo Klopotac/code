@@ -1,9 +1,9 @@
 import socket
 import random
 import time
-from termcolor import colored
 
-text = colored('''
+
+text = ('''
 ██╗   ██╗██████╗ ██╗
 ██║   ██║██╔══██╗██║
 ██║   ██║██████╔╝██║
@@ -11,9 +11,9 @@ text = colored('''
  ╚████╔╝ ██║  ██║██║
   ╚═══╝  ╚═╝  ╚═╝╚═╝
 
-''', 'red', 
+''') 
 
-)
+
 
 print(text)
 
